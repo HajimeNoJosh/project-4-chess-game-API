@@ -1,4 +1,4 @@
-# Project-4-chess-game-client
+# Project-4-chess-game-API
 
 [API](https://stark-citadel-18124.herokuapp.com)
 
