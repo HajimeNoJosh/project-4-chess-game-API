@@ -12,6 +12,13 @@ I only use a one to one relationship between a user and game. In my game I store
 coordinates as an array. My Chess client sends those coordinates from a created
 game that they play.
 
+I began by writing my relationship schema. It was initally a string that I was
+going to store as an array but I realized I could call it an array in the backend.
+I moved on to my routes. I did run a snag for a bit when I neglected to update
+ my server.js. I eventually realized this was the issue and promptly fixed it.
+ I found this out with my curl scripts as I was testing my code. At this point my
+ backend was done and has more or less stayed the same since.
+
 In the future I would like to implement a currentState of the game which will also
 be an array. This currentState will be used to show a snapshot of the game. I would
 also like to implement playersTurn (string), gameOver(boolean). These will be useful
