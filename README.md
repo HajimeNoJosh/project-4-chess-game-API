@@ -4,7 +4,7 @@
 
 [Website]( https://hajimenojosh.github.io/project-4-chess-game-client/)
 
-[API Github](https://github.com/HajimeNoJosh/project-4-chess-game-API)
+[Client Github](https://github.com/HajimeNoJosh/project-4-chess-game-client)
 
 This Api is used for my chess game app
 
