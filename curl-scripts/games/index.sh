@@ -1,7 +1,7 @@
 #!/bin/sh
 
 API="http://localhost:4741"
-URL_PATH="/coordinates"
+URL_PATH="/games"
 
 curl "${API}${URL_PATH}" \
   --include \

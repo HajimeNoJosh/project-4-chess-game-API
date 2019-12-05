@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
-const coordinateSchema = new mongoose.Schema({
+const gameSchema = new mongoose.Schema({
   coords: {
-    type: String,
+    type: Array,
     required: true
   },
   owner: {
@@ -14,4 +14,4 @@ const coordinateSchema = new mongoose.Schema({
   timestamps: true
 })
 
-module.exports = mongoose.model('Coordinate', coordinateSchema)
+module.exports = mongoose.model('Game', gameSchema)
