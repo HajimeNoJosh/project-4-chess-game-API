@@ -27,19 +27,38 @@ const requireToken = passport.authenticate('bearer', { session: false })
 // instantiate a router (mini app that only handles routes)
 const router = express.Router()
 
+// const _ = require('underscore')
+
 // INDEX
 // GET /games
+// router.get('/games', requireToken, (req, res, next) => {
+//   Game.find()
+//     .then(games => {
+//       const userId = req.user._id
+//
+//       let gamesArray = games.filter(game => {
+//         if (_.isEqual(game.owner._id, userId)) {
+//           return game
+//         }
+//       })
+//       // `games` will be an array of Mongoose documents
+//       // we want to convert each one to a POJO, so we use `.map` to
+//       // apply `.toObject` to each one
+//       return gamesArray.map(game => game.toObject())
+//     })
+//     // respond with status 200 and JSON of the games
+//     .then(games => res.status(200).json({ games: games }))
+//     // if an error occurs, pass it to the handler
+//     .catch(next)
+// })
+
 router.get('/games', requireToken, (req, res, next) => {
-  Game.find()
+  let search = { owner: req.user.id }
+  Game.find(search)
     .then(games => {
-      // `games` will be an array of Mongoose documents
-      // we want to convert each one to a POJO, so we use `.map` to
-      // apply `.toObject` to each one
       return games.map(game => game.toObject())
     })
-    // respond with status 200 and JSON of the games
     .then(games => res.status(200).json({ games: games }))
-    // if an error occurs, pass it to the handler
     .catch(next)
 })
 
