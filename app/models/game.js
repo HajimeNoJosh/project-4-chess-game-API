@@ -5,6 +5,10 @@ const gameSchema = new mongoose.Schema({
     type: Array,
     required: true
   },
+  origBoard: {
+    type: Array,
+    required: true
+  },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
